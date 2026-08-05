@@ -1,0 +1,136 @@
+/* ============================================
+   Brands Carousel (Infinite Scroll)
+   ============================================ */
+
+.brands-carousel {
+  padding: var(--space-12) 0;
+  background: var(--color-dark);
+  overflow: hidden;
+  position: relative;
+}
+
+.brands-carousel__label {
+  display: flex;
+  align-items: center;
+  gap: var(--space-6);
+  padding: 0 var(--space-6);
+  max-width: 1280px;
+  margin: 0 auto var(--space-10);
+}
+
+.brands-carousel__label span {
+  font-family: var(--font-heading);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--color-gray-500);
+  white-space: nowrap;
+}
+
+.brands-carousel__line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, var(--color-dark-border), transparent);
+}
+
+/* Track */
+.brands-carousel__track-wrapper {
+  position: relative;
+}
+
+.brands-carousel__track {
+  display: flex;
+  gap: var(--space-10);
+  animation: brandScroll 30s linear infinite;
+  width: max-content;
+}
+
+.brands-carousel__track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes brandScroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Items */
+.brands-carousel__item {
+  flex-shrink: 0;
+  width: 160px;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-4);
+  background: var(--color-dark-card);
+  border: 1px solid var(--color-dark-border);
+  border-radius: var(--radius-xl);
+  transition: all var(--transition-base);
+  cursor: pointer;
+}
+
+.brands-carousel__item:hover {
+  border-color: var(--color-primary);
+  background: rgba(232, 93, 38, 0.06);
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(232, 93, 38, 0.15);
+}
+
+.brands-carousel__logo {
+  max-width: 100%;
+  max-height: 60px;
+  object-fit: contain;
+  filter: grayscale(60%) brightness(0.9);
+  opacity: 0.7;
+  transition: all var(--transition-base);
+}
+
+.brands-carousel__item:hover .brands-carousel__logo {
+  filter: grayscale(0%) brightness(1);
+  opacity: 1;
+}
+
+/* Fade edges */
+.brands-carousel__fade {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 120px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.brands-carousel__fade--left {
+  left: 0;
+  background: linear-gradient(90deg, var(--color-dark), transparent);
+}
+
+.brands-carousel__fade--right {
+  right: 0;
+  background: linear-gradient(270deg, var(--color-dark), transparent);
+}
+
+/* ============================================
+   Responsive
+   ============================================ */
+
+@media (max-width: 768px) {
+  .brands-carousel__item {
+    width: 130px;
+    height: 75px;
+  }
+
+  .brands-carousel__fade {
+    width: 60px;
+  }
+
+  .brands-carousel__track {
+    gap: var(--space-6);
+  }
+}

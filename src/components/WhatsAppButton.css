@@ -1,0 +1,146 @@
+/* ============================================
+   Floating Action Social Button (Speed Dial)
+   ============================================ */
+
+.social-fab {
+  position: fixed;
+  bottom: var(--space-8);
+  right: var(--space-8);
+  z-index: var(--z-whatsapp);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.social-fab__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 62px;
+  height: 62px;
+  border-radius: var(--radius-full);
+  background: linear-gradient(135deg, #25D366, #128C7E);
+  color: var(--color-white);
+  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.45);
+  transition: all var(--transition-base);
+  position: relative;
+  z-index: 2;
+  text-decoration: none;
+}
+
+.social-fab__btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 10px 30px rgba(37, 211, 102, 0.6);
+}
+
+/* Speed Dial Menu */
+.social-fab__menu {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: var(--space-3);
+  margin-bottom: var(--space-3);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(15px) scale(0.9);
+  transition: all var(--transition-base);
+  pointer-events: none;
+}
+
+.social-fab--open .social-fab__menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+
+/* Menu Item */
+.social-fab__item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-full);
+  color: var(--color-white);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  transition: all var(--transition-base);
+}
+
+.social-fab__item:hover {
+  transform: translateX(-4px) scale(1.05);
+}
+
+.social-fab__item--wa {
+  background: #25D366;
+}
+
+.social-fab__item--ig {
+  background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+}
+
+.social-fab__item--fb {
+  background: #1877F2;
+}
+
+.social-fab__label {
+  white-space: nowrap;
+  letter-spacing: 0.05em;
+}
+
+/* Pulse rings */
+.social-fab__pulse {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 62px;
+  height: 62px;
+  border-radius: var(--radius-full);
+  background: rgba(37, 211, 102, 0.35);
+  animation: waPulse 2.5s ease-out infinite;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.social-fab__pulse--delayed {
+  animation-delay: 1.25s;
+}
+
+@keyframes waPulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(2.1);
+    opacity: 0;
+  }
+}
+
+/* ============================================
+   Responsive
+   ============================================ */
+
+@media (max-width: 768px) {
+  .social-fab {
+    bottom: var(--space-5);
+    right: var(--space-5);
+  }
+
+  .social-fab__btn {
+    width: 54px;
+    height: 54px;
+  }
+
+  .social-fab__btn svg {
+    width: 26px;
+    height: 26px;
+  }
+
+  .social-fab__pulse {
+    width: 54px;
+    height: 54px;
+  }
+}
