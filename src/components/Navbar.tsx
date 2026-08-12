@@ -93,7 +93,7 @@ export default function Navbar() {
 
           <li className="navbar__links-cta-mobile">
             <a
-              href="https://wa.me/56968163883?text=Hola%2C%20quiero%20cotizar%20un%20repuesto"
+              href="https://wa.me/56961546709?text=Hola%2C%20quiero%20cotizar%20un%20repuesto"
               target="_blank"
               rel="noopener noreferrer"
               className="btn btn-primary"
@@ -134,7 +134,7 @@ export default function Navbar() {
               </svg>
             </a>
             <a
-              href="https://wa.me/56968163883"
+              href="https://wa.me/56961546709"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="WhatsApp"

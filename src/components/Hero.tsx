@@ -1,5 +1,17 @@
 import './Hero.css';
 
+const mainTruckModels = [
+  { brand: 'MAXUS', model: 'T60 / T90 / V80', tag: 'Principal', icon: '🚙' },
+  { brand: 'TOYOTA', model: 'Hilux', tag: 'Destacado', icon: '🛻' },
+  { brand: 'NISSAN', model: 'NP300', tag: 'Destacado', icon: '🛻' },
+  { brand: 'MITSUBISHI', model: 'L200', tag: 'Destacado', icon: '🛻' },
+  { brand: 'VOLKSWAGEN', model: 'Amarok', tag: 'Nuevo', icon: '🛻' },
+  { brand: 'JAC', model: 'T8 / T9 / Sunray', tag: 'Compatible', icon: '🛻' },
+  { brand: 'JMC', model: 'Vigus / Avenue', tag: 'Compatible', icon: '🛻' },
+  { brand: 'SSANGYONG', model: 'Musso / Korando', tag: 'Compatible', icon: '🛻' },
+  { brand: 'CHANGAN', model: 'Hunter', tag: 'Compatible', icon: '🛻' },
+];
+
 export default function Hero() {
   return (
     <section className="hero" id="inicio">
@@ -9,22 +21,24 @@ export default function Hero() {
       </div>
 
       <div className="hero__content container">
-        <div className="hero__text">
-          <div className="hero__badge">
+        <div className="hero__center-badge-container">
+          <div className="hero__badge hero__badge--large">
             <span className="hero__badge-dot" />
-            Especialistas en Repuestos para Camionetas
+            ESPECIALISTAS EN REPUESTOS PARA CAMIONETAS
           </div>
+        </div>
+
+        <div className="hero__text">
           <h1 className="hero__title">
             Repuestos de <span className="hero__title-accent">Calidad</span> para
             Camionetas que <span className="hero__title-green">Exigen Más</span>
           </h1>
           <p className="hero__subtitle">
-            Distribuidor especializado en repuestos <strong>Maxus</strong>, Toyota Hilux,
-            Nissan, Mitsubishi L200 y más. Stock permanente con envíos a todo Chile.
+            Distribuidor especializado en <strong>Maxus</strong> con todos sus modelos.
           </p>
           <div className="hero__cta-group">
             <a
-              href="https://wa.me/56968163883?text=Hola%2C%20quiero%20cotizar%20un%20repuesto"
+              href="https://wa.me/56961546709?text=Hola%2C%20quiero%20cotizar%20un%20repuesto"
               target="_blank"
               rel="noopener noreferrer"
               className="btn btn-primary hero__cta"
@@ -43,11 +57,23 @@ export default function Hero() {
             </a>
           </div>
 
-          <div className="hero__brands-strip">
-            <span className="hero__brands-label">Marcas principales:</span>
-            <div className="hero__brands-list">
-              {['MAXUS', 'Toyota', 'Nissan', 'Mitsubishi', 'JAC', 'JMC', 'Greatwall', 'DFSK'].map((brand) => (
-                <span key={brand} className="hero__brand-tag">{brand}</span>
+          <div className="hero__models-section">
+            <span className="hero__models-title">Modelos Principales:</span>
+            <div className="hero__models-grid">
+              {mainTruckModels.map((item) => (
+                <a
+                  key={item.brand}
+                  href={`https://wa.me/56961546709?text=Hola%2C%20necesito%20repuestos%20para%20${encodeURIComponent(item.brand)}%20${encodeURIComponent(item.model)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hero__model-card"
+                >
+                  <span className="hero__model-icon">{item.icon}</span>
+                  <div className="hero__model-info">
+                    <span className="hero__model-brand">{item.brand}</span>
+                    <span className="hero__model-name">{item.model}</span>
+                  </div>
+                </a>
               ))}
             </div>
           </div>
@@ -78,3 +104,4 @@ export default function Hero() {
     </section>
   );
 }
+

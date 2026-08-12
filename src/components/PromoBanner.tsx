@@ -82,7 +82,7 @@ export default function PromoBanner() {
                     <h3 className="promo__slide-title">{slide.title}</h3>
                     <p className="promo__slide-subtitle">{slide.subtitle}</p>
                     <a
-                      href={`https://wa.me/56968163883?text=Hola%2C%20quisiera%20consultar%20por%3A%20${encodeURIComponent(slide.title)}`}
+                      href={`https://wa.me/56961546709?text=Hola%2C%20quisiera%20consultar%20por%3A%20${encodeURIComponent(slide.title)}`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="btn btn-primary promo__slide-btn"

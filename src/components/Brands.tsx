@@ -1,46 +1,106 @@
+import { useState } from 'react';
 import './Brands.css';
 
-interface Brand {
+interface BrandItem {
+  id: string;
   name: string;
+  logo?: string;
   models: string[];
   featured?: boolean;
 }
 
-const brands: Brand[] = [
-  { name: 'MAXUS', models: ['T60', 'T90', 'V80', 'V90', 'G10'], featured: true },
-  { name: 'Toyota Hilux', models: ['Hilux'] },
-  { name: 'Nissan NP300', models: ['NP300'] },
-  { name: 'Nissan Terrano', models: ['Terrano'] },
-  { name: 'Mitsubishi L200', models: ['L200'] },
-  { name: 'JAC', models: ['T8'] },
-  { name: 'JMC', models: ['Vigus'] },
-  { name: 'Greatwall Poer', models: ['Poer'] },
-  { name: 'DFSK', models: ['Glory'] },
+const brandsData: BrandItem[] = [
+  {
+    id: 'maxus',
+    name: 'MAXUS',
+    logo: '/img/brands/maxus.png',
+    models: ['T60', 'T90', 'V80', 'V90', 'G10'],
+    featured: true,
+  },
+  {
+    id: 'toyota',
+    name: 'TOYOTA',
+    logo: '/img/brands/toyota.png',
+    models: ['Hilux'],
+  },
+  {
+    id: 'nissan',
+    name: 'NISSAN',
+    logo: '/img/brands/nissan.png',
+    models: ['NP300'],
+  },
+  {
+    id: 'mitsubishi',
+    name: 'MITSUBISHI',
+    logo: '/img/brands/mitsubishi.png',
+    models: ['L200'],
+  },
+  {
+    id: 'volkswagen',
+    name: 'VOLKSWAGEN',
+    models: ['Amarok'],
+  },
+  {
+    id: 'jac',
+    name: 'JAC',
+    logo: '/img/brands/jac.png',
+    models: ['T8', 'T9', 'Sunray', 'Refine'],
+  },
+  {
+    id: 'jmc',
+    name: 'JMC',
+    logo: '/img/brands/jmc.png',
+    models: ['Vigus', 'Avenue'],
+  },
+  {
+    id: 'dfsk',
+    name: 'DFSK',
+    logo: '/img/brands/dfsk.png',
+    models: ['D1'],
+  },
+  {
+    id: 'ssangyong',
+    name: 'SSANGYONG',
+    models: ['Musso', 'Korando', 'Actyon'],
+  },
+  {
+    id: 'changan',
+    name: 'CHANGAN',
+    models: ['Hunter'],
+  },
+  {
+    id: 'greatwall',
+    name: 'GREAT WALL',
+    logo: '/img/brands/greatwall.png',
+    models: ['Poer', 'Wingle'],
+  },
 ];
 
 export default function Brands() {
+  const [selectedBrand, setSelectedBrand] = useState<BrandItem>(brandsData[0]);
+
   return (
     <section className="brands section" id="marcas">
       <div className="container">
         <div className="section-header">
-          <span className="section-tag">Compatibilidad</span>
+          <span className="section-tag">Compatibilidad Total</span>
           <h2 className="section-title">
-            Marcas <span>Compatibles</span>
+            Marcas & <span>Modelos Principales</span>
           </h2>
           <div className="divider-line" />
           <p className="section-subtitle">
-            Trabajamos con las principales marcas de camionetas del mercado chileno
+            Haz clic en cualquier marca para ver todos los modelos de camionetas con repuestos en stock
           </p>
         </div>
 
-        {/* Featured brand - Maxus */}
+        {/* Featured Maxus Header Banner */}
         <div className="brands__featured">
           <div className="brands__featured-content">
-            <div className="brands__featured-badge">Marca Principal</div>
+            <div className="brands__featured-badge">Distribuidor Oficial de Repuestos</div>
             <h3 className="brands__featured-name">MAXUS</h3>
             <p className="brands__featured-desc">
-              Somos especialistas en repuestos para toda la línea Maxus. 
-              Stock completo para mantener tu camioneta en óptimas condiciones.
+              Somos distribuidores especializados en toda la línea de camionetas y furgones Maxus. 
+              Disponemos de repuestos genuinos y alternativos de alta durabilidad para T60, T90, V80, V90 y G10.
             </p>
             <div className="brands__featured-models">
               {['T60', 'T90', 'V80', 'V90', 'G10'].map((model) => (
@@ -48,7 +108,7 @@ export default function Brands() {
               ))}
             </div>
             <a
-              href="https://wa.me/56968163883?text=Hola%2C%20necesito%20repuestos%20para%20mi%20Maxus"
+              href="https://wa.me/56961546709?text=Hola%2C%20necesito%20repuestos%20para%20mi%20Maxus"
               target="_blank"
               rel="noopener noreferrer"
               className="btn btn-primary"
@@ -60,37 +120,54 @@ export default function Brands() {
             </a>
           </div>
           <div className="brands__featured-visual">
-            <div className="brands__featured-ring" />
-            <div className="brands__featured-logo-text">MAXUS</div>
+            <div className="brands__featured-logo-silver">
+              <span>MAXUS</span>
+            </div>
           </div>
         </div>
 
-        {/* Other brands grid */}
+        {/* Brands selector buttons */}
         <div className="brands__grid">
-          {brands.filter(b => !b.featured).map((brand) => (
-            <a
-              key={brand.name}
-              href={`https://wa.me/56968163883?text=Hola%2C%20necesito%20repuestos%20para%20${encodeURIComponent(brand.name)}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="brands__card"
+          {brandsData.map((brand) => (
+            <button
+              key={brand.id}
+              onClick={() => setSelectedBrand(brand)}
+              className={`brands__card ${selectedBrand.id === brand.id ? 'brands__card--active' : ''}`}
             >
-              <div className="brands__card-icon">
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                  <path d="M7 17m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
-                  <path d="M17 17m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
-                  <path d="M5 17h-2v-6l2-5h9l4 5h1a2 2 0 0 1 2 2v4h-2m-4 0h-6m-6 -6h15m-6 0v-5" />
-                </svg>
-              </div>
-              <span className="brands__card-name">{brand.name}</span>
-              <span className="brands__card-arrow">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
-                </svg>
-              </span>
-            </a>
+              {brand.logo ? (
+                <img src={brand.logo} alt={brand.name} className="brands__card-logo-img" />
+              ) : (
+                <span className="brands__card-name-text">{brand.name}</span>
+              )}
+              <span className="brands__card-count-badge">{brand.models.length} modelos</span>
+            </button>
           ))}
         </div>
+
+        {/* Selected Brand Model Detail View */}
+        {selectedBrand && (
+          <div className="brands__detail-box">
+            <div className="brands__detail-header">
+              <h3>Modelos con Repuestos para {selectedBrand.name}</h3>
+              <p>Selecciona tu modelo para consultar repuestos por WhatsApp:</p>
+            </div>
+            <div className="brands__detail-models-grid">
+              {selectedBrand.models.map((model) => (
+                <a
+                  key={model}
+                  href={`https://wa.me/56961546709?text=Hola%2C%20necesito%20repuestos%20para%20${encodeURIComponent(selectedBrand.name)}%20${encodeURIComponent(model)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="brands__detail-model-btn"
+                >
+                  <span className="brands__detail-model-icon">🛻</span>
+                  <span className="brands__detail-model-name">{selectedBrand.name} {model}</span>
+                  <span className="brands__detail-model-cta">Cotizar →</span>
+                </a>
+              ))}
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );

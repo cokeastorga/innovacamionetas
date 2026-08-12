@@ -23,9 +23,7 @@ export default function Racing() {
               Pasión por el <span className="racing__title-accent">Rendimiento</span>
             </h2>
             <p className="racing__desc">
-              En Innova Camionetas no solo vendemos repuestos — vivimos la pasión automotriz. 
-              Somos orgullosos patrocinadores del <strong>AutoClub Valdivia</strong>, apoyando 
-              al equipo #97 en competencias regionales.
+              En Innova Camionetas apoyando al deporte motor local de Valdivia, <strong>piloto Rodrigo Larrañaga auto #97</strong>.
             </p>
             <p className="racing__desc">
               Esta misma pasión por la calidad y el rendimiento es lo que ponemos en cada repuesto 
@@ -38,17 +36,17 @@ export default function Racing() {
                 <span className="racing__stat-label">Sucursales en Valdivia</span>
               </div>
               <div className="racing__stat">
-                <span className="racing__stat-number">9+</span>
+                <span className="racing__stat-number">10+</span>
                 <span className="racing__stat-label">Marcas Compatibles</span>
               </div>
               <div className="racing__stat">
-                <span className="racing__stat-number">24+</span>
+                <span className="racing__stat-number">30+</span>
                 <span className="racing__stat-label">Tipos de Repuestos</span>
               </div>
             </div>
 
             <a
-              href="https://wa.me/56968163883?text=Hola%2C%20quiero%20cotizar%20un%20repuesto"
+              href="https://wa.me/56961546709?text=Hola%2C%20quiero%20cotizar%20un%20repuesto"
               target="_blank"
               rel="noopener noreferrer"
               className="btn btn-primary"

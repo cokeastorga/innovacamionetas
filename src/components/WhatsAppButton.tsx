@@ -42,7 +42,7 @@ export default function WhatsAppButton() {
         </a>
 
         <a
-          href="https://wa.me/56968163883?text=Hola%2C%20quiero%20cotizar%20un%20repuesto"
+          href="https://wa.me/56961546709?text=Hola%2C%20quiero%20cotizar%20un%20repuesto"
           target="_blank"
           rel="noopener noreferrer"
           className="social-fab__item social-fab__item--wa"
@@ -57,7 +57,7 @@ export default function WhatsAppButton() {
 
       {/* Main Trigger Button */}
       <a
-        href="https://wa.me/56968163883?text=Hola%2C%20quiero%20cotizar%20un%20repuesto"
+        href="https://wa.me/56961546709?text=Hola%2C%20quiero%20cotizar%20un%20repuesto"
         target="_blank"
         rel="noopener noreferrer"
         className="social-fab__btn"

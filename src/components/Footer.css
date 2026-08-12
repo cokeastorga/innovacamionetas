@@ -127,6 +127,42 @@
   color: var(--color-primary-light);
 }
 
+/* Bank Transfer Card */
+.footer__bank-card {
+  margin-top: var(--space-8);
+  padding: var(--space-6) var(--space-8);
+  background: linear-gradient(135deg, rgba(232, 93, 38, 0.1) 0%, rgba(255, 255, 255, 0.02) 100%);
+  border: 1px solid rgba(232, 93, 38, 0.25);
+  border-radius: var(--radius-xl);
+}
+
+.footer__bank-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-3);
+  color: var(--color-primary-light);
+}
+
+.footer__bank-header h4 {
+  font-size: var(--text-base);
+  font-weight: 800;
+  color: var(--color-white);
+}
+
+.footer__bank-info p {
+  font-size: var(--text-sm);
+  color: var(--color-gray-300);
+  margin-bottom: var(--space-1);
+}
+
+.footer__bank-note {
+  font-size: var(--text-xs) !important;
+  color: var(--color-gray-400) !important;
+  margin-top: var(--space-2);
+  font-style: italic;
+}
+
 /* Bottom */
 .footer__bottom {
   border-top: 1px solid rgba(255, 255, 255, 0.06);

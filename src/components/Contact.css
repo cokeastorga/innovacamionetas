@@ -33,6 +33,42 @@
   box-shadow: var(--shadow-xl);
 }
 
+.contact__alert {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-4) var(--space-5);
+  border-radius: var(--radius-lg);
+  font-size: var(--text-sm);
+  margin-bottom: var(--space-6);
+  animation: fadeIn 0.3s ease;
+}
+
+.contact__alert--success {
+  background: rgba(139, 197, 63, 0.15);
+  border: 1px solid var(--color-accent);
+  color: #a3e635;
+}
+
+.contact__alert--success svg {
+  color: var(--color-accent);
+  flex-shrink: 0;
+}
+
+.contact__spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: var(--color-white);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  display: inline-block;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
 .contact__form-group {
   margin-bottom: var(--space-5);
 }
@@ -92,13 +128,29 @@
   min-height: 100px;
 }
 
-.contact__submit {
+.contact__action-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin-top: var(--space-4);
+}
+
+.contact__submit-btn {
   width: 100%;
   justify-content: center;
-  padding: var(--space-4) var(--space-8);
-  font-size: var(--text-lg);
-  margin-top: var(--space-4);
-  box-shadow: 0 6px 20px rgba(232, 93, 38, 0.35);
+  padding: var(--space-4) var(--space-6);
+  font-size: var(--text-base);
+  box-shadow: 0 6px 20px rgba(232, 93, 38, 0.3);
+}
+
+.contact__submit-btn--email {
+  border-color: rgba(255, 255, 255, 0.2);
+  color: var(--color-white);
+}
+
+.contact__submit-btn--email:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--color-white);
 }
 
 /* Info Cards */
@@ -142,6 +194,16 @@
 .contact__info-icon--wa {
   background: rgba(37, 211, 102, 0.15);
   color: #25D366;
+}
+
+.contact__info-icon--people {
+  background: rgba(232, 93, 38, 0.15);
+  color: var(--color-primary);
+}
+
+.contact__info-icon--mail {
+  background: rgba(59, 130, 246, 0.15);
+  color: #3B82F6;
 }
 
 .contact__info-icon--ig {
