@@ -175,8 +175,10 @@ export default function Brands() {
                   rel="noopener noreferrer"
                   className="brands__detail-model-btn"
                 >
-                  <span className="brands__detail-model-icon">🛻</span>
-                  <span className="brands__detail-model-name">{selectedBrand.name} {model}</span>
+                  <div className="brands__detail-model-info-wrap">
+                    <span className="brands__detail-model-icon">🛻</span>
+                    <span className="brands__detail-model-name">{selectedBrand.name} <strong>{model}</strong></span>
+                  </div>
                   <span className="brands__detail-model-cta">Cotizar →</span>
                 </a>
               ))}
