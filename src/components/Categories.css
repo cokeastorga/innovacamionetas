@@ -14,7 +14,7 @@
 
 .categories__grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: var(--space-6);
 }
 
@@ -307,9 +307,47 @@
 @media (max-width: 768px) {
   .categories__grid {
     grid-template-columns: 1fr;
+    gap: var(--space-4);
   }
 
   .categories__card {
+    padding: var(--space-5);
+  }
+
+  .categories__card-title {
+    font-size: var(--text-lg);
+  }
+
+  .cat-modal__content {
     padding: var(--space-6);
+    max-width: 92vw;
+  }
+}
+
+@media (max-width: 480px) {
+  .categories__card {
+    padding: var(--space-4);
+  }
+
+  .categories__card-header {
+    gap: var(--space-3);
+    margin-bottom: var(--space-3);
+  }
+
+  .categories__card-icon {
+    width: 44px;
+    height: 44px;
+  }
+
+  .cat-modal__content {
+    padding: var(--space-5);
+  }
+
+  .cat-modal__img-container {
+    height: 180px;
+  }
+
+  .cat-modal__title {
+    font-size: var(--text-xl);
   }
 }
