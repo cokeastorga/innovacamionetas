@@ -35,6 +35,8 @@ const slides = [
 export default function PromoBanner() {
   const [current, setCurrent] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
+  const [touchStart, setTouchStart] = useState<number | null>(null);
+  const [touchEnd, setTouchEnd] = useState<number | null>(null);
 
   const next = useCallback(() => {
     setCurrent((prev) => (prev + 1) % slides.length);
@@ -49,6 +51,28 @@ export default function PromoBanner() {
     const timer = setInterval(next, 6000);
     return () => clearInterval(timer);
   }, [isPaused, next]);
+
+  // Touch Swipe Handler for Mobile
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setTouchEnd(null);
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > 40;
+    const isRightSwipe = distance < -40;
+    if (isLeftSwipe) {
+      next();
+    } else if (isRightSwipe) {
+      prev();
+    }
+  };
 
   return (
     <section className="promo section" id="promociones">
@@ -68,16 +92,19 @@ export default function PromoBanner() {
           className="promo__carousel"
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
         >
           <div className="promo__track" style={{ transform: `translateX(-${current * 100}%)` }}>
             {slides.map((slide, i) => (
               <div className="promo__slide" key={i}>
                 <div className="promo__slide-bg" style={{ backgroundImage: `url(${slide.src})` }} />
                 <div className="promo__slide-wrapper">
-                  <div className="promo__img-container">
+                  <div className="promo__slide-media">
                     <img src={slide.src} alt={slide.title} className="promo__img" />
                   </div>
-                  <div className="promo__content-overlay">
+                  <div className="promo__slide-info">
                     <span className="promo__badge">{slide.tag}</span>
                     <h3 className="promo__slide-title">{slide.title}</h3>
                     <p className="promo__slide-subtitle">{slide.subtitle}</p>
@@ -131,3 +158,4 @@ export default function PromoBanner() {
     </section>
   );
 }
+
