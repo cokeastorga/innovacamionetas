@@ -1,10 +1,23 @@
 import { useState } from 'react';
 import './Brands.css';
+import {
+  MaxusLogo,
+  ToyotaLogo,
+  NissanLogo,
+  MitsubishiLogo,
+  VolkswagenLogo,
+  JacLogo,
+  JmcLogo,
+  DfskLogo,
+  SsangyongLogo,
+  ChanganLogo,
+  GreatWallLogo,
+} from './BrandLogos';
 
 interface BrandItem {
   id: string;
   name: string;
-  logo?: string;
+  renderLogo: () => React.ReactNode;
   models: string[];
   featured?: boolean;
 }
@@ -13,65 +26,68 @@ const brandsData: BrandItem[] = [
   {
     id: 'maxus',
     name: 'MAXUS',
-    logo: '/img/brands/maxus.png',
+    renderLogo: () => <MaxusLogo />,
     models: ['T60', 'T90', 'V80', 'V90', 'G10'],
     featured: true,
   },
   {
     id: 'toyota',
     name: 'TOYOTA',
-    logo: '/img/brands/toyota.png',
+    renderLogo: () => <ToyotaLogo />,
     models: ['Hilux'],
   },
   {
     id: 'nissan',
     name: 'NISSAN',
-    logo: '/img/brands/nissan.png',
+    renderLogo: () => <NissanLogo />,
     models: ['NP300'],
   },
   {
     id: 'mitsubishi',
     name: 'MITSUBISHI',
-    logo: '/img/brands/mitsubishi.png',
+    renderLogo: () => <MitsubishiLogo />,
     models: ['L200'],
   },
   {
     id: 'volkswagen',
     name: 'VOLKSWAGEN',
+    renderLogo: () => <VolkswagenLogo />,
     models: ['Amarok'],
   },
   {
     id: 'jac',
     name: 'JAC',
-    logo: '/img/brands/jac.png',
+    renderLogo: () => <JacLogo />,
     models: ['T8', 'T9', 'Sunray', 'Refine'],
   },
   {
     id: 'jmc',
     name: 'JMC',
-    logo: '/img/brands/jmc.png',
+    renderLogo: () => <JmcLogo />,
     models: ['Vigus', 'Avenue'],
   },
   {
     id: 'dfsk',
     name: 'DFSK',
-    logo: '/img/brands/dfsk.png',
+    renderLogo: () => <DfskLogo />,
     models: ['D1'],
   },
   {
     id: 'ssangyong',
     name: 'SSANGYONG',
+    renderLogo: () => <SsangyongLogo />,
     models: ['Musso', 'Korando', 'Actyon'],
   },
   {
     id: 'changan',
     name: 'CHANGAN',
+    renderLogo: () => <ChanganLogo />,
     models: ['Hunter'],
   },
   {
     id: 'greatwall',
     name: 'GREAT WALL',
-    logo: '/img/brands/greatwall.png',
+    renderLogo: () => <GreatWallLogo />,
     models: ['Poer', 'Wingle'],
   },
 ];
@@ -135,17 +151,7 @@ export default function Brands() {
               className={`brands__card ${selectedBrand.id === brand.id ? 'brands__card--active' : ''}`}
             >
               <div className="brands__card-logo-container">
-                {brand.logo ? (
-                  <img src={brand.logo} alt={brand.name} className="brands__card-logo-img" />
-                ) : (
-                  <div className="brands__card-icon-fallback">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                      <path d="M7 17m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
-                      <path d="M17 17m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
-                      <path d="M5 17h-2v-6l2-5h9l4 5h1a2 2 0 0 1 2 2v4h-2m-4 0h-6m-6 -6h15m-6 0v-5" />
-                    </svg>
-                  </div>
-                )}
+                {brand.renderLogo()}
               </div>
               <span className="brands__card-name-text">{brand.name}</span>
               <span className="brands__card-count-badge">{brand.models.length} modelos</span>
