@@ -3,8 +3,8 @@ import './Categories.css';
 
 interface ProductItem {
   name: string;
-  image?: string;
-  desc?: string;
+  image: string;
+  desc: string;
 }
 
 interface Category {
@@ -27,10 +27,26 @@ const categories: Category[] = [
       </svg>
     ),
     products: [
-      { name: 'Kit de Distribución', image: '/img/flayer2.jpeg', desc: 'Kit de distribución completo (correa/cadena, tensores y poleas)' },
-      { name: 'Empaquetaduras', image: '/img/promo2.jpeg', desc: 'Juegos de empaquetaduras de culata y tapa de válvulas' },
-      { name: 'Correa de Accesorios', desc: 'Correas Poly-V de alta resistencia para alternador y bomba' },
-      { name: 'Bomba de Agua', desc: 'Bombas de agua de alto rendimiento con sello cerámico' },
+      {
+        name: 'Kit de Distribución',
+        image: 'https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=800&q=80',
+        desc: 'Kit de distribución completo que incluye correa o cadena dentada de alta resistencia, tensores automáticos y poleas de guía.',
+      },
+      {
+        name: 'Empaquetaduras',
+        image: 'https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&w=800&q=80',
+        desc: 'Juegos de empaquetaduras de culata, múltiple de admisión/escape y tapa de válvulas reforzadas para motores turbo diésel.',
+      },
+      {
+        name: 'Correa de Accesorios',
+        image: 'https://images.unsplash.com/photo-1517524008697-84bbe3c3fd98?auto=format&fit=crop&w=800&q=80',
+        desc: 'Correas Poly-V estriadas de alta durabilidad para alternador, bomba de dirección y compresor de aire acondicionado.',
+      },
+      {
+        name: 'Bomba de Agua',
+        image: 'https://images.unsplash.com/photo-1486006920555-c77dce18193b?auto=format&fit=crop&w=800&q=80',
+        desc: 'Bomba de agua con rodamiento y sellos cerámicos de alta eficiencia para óptima refrigeración del motor.',
+      },
     ],
   },
   {
@@ -45,11 +61,31 @@ const categories: Category[] = [
       </svg>
     ),
     products: [
-      { name: 'Discos de Freno', image: '/img/promo2.jpeg', desc: 'Discos ventilados y sólidos con especificación original' },
-      { name: 'Pastillas de Freno', desc: 'Pastillas cerámicas y semimetálicas de bajo ruido' },
-      { name: 'Bombas de Freno', desc: 'Cilindros maestros de freno de alta presión' },
-      { name: 'Balatas', desc: 'Juegos de balatas de freno de tambor traseras' },
-      { name: 'Líquido de Freno', desc: 'Líquido DOT4 sintético alta temperatura' },
+      {
+        name: 'Discos de Freno',
+        image: 'https://images.unsplash.com/photo-1600793575654-910699b5e4d4?auto=format&fit=crop&w=800&q=80',
+        desc: 'Discos de freno delanteros y traseros ventilados, fabricados en aleación de hierro nodular para máxima disipación de calor.',
+      },
+      {
+        name: 'Pastillas de Freno',
+        image: 'https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=800&q=80',
+        desc: 'Juego de pastillas cerámicas y semimetálicas de bajo nivel de polvo y frenado silencioso de alta fricción.',
+      },
+      {
+        name: 'Bombas de Freno',
+        image: 'https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=800&q=80',
+        desc: 'Cilindro maestro de freno con depósito y empacamiento de alta presión para respuesta inmediata.',
+      },
+      {
+        name: 'Balatas',
+        image: 'https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=800&q=80',
+        desc: 'Juego de balatas de freno de tambor traseras con compuesto orgánico libre de asbesto.',
+      },
+      {
+        name: 'Líquido de Freno',
+        image: 'https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?auto=format&fit=crop&w=800&q=80',
+        desc: 'Líquido de freno sintético norma DOT 4 resistente a altas temperaturas y humedad en condiciones severas.',
+      },
     ],
   },
   {
@@ -63,13 +99,41 @@ const categories: Category[] = [
       </svg>
     ),
     products: [
-      { name: 'Aceites', image: '/img/flayer1.jpeg', desc: 'Aceites 5W30 100% sintéticos y semi-sintéticos para motores Diésel' },
-      { name: 'Refrigerantes', desc: 'Refrigerante anticongelante orgánico listo para usar' },
-      { name: 'Desengrasante', desc: 'Desengrasante industrial para motor y chasis' },
-      { name: 'Aditivos', desc: 'Aditivos limpiadores de inyectores y tratamiento de combustible' },
-      { name: 'Filtro de Aire', desc: 'Filtros de aire de alta filtración para polvo y partículas' },
-      { name: 'Filtro de Petróleo', desc: 'Filtros de diésel separadores de agua' },
-      { name: 'Filtro de Aceite', desc: 'Filtros de aceite con válvula anti-retorno' },
+      {
+        name: 'Aceites',
+        image: 'https://images.unsplash.com/photo-1615906655593-ad0386982a0f?auto=format&fit=crop&w=800&q=80',
+        desc: 'Aceites para motor 5W-30 100% sintéticos especificación ACEA C3 / API SN especiales para filtros DPF diésel.',
+      },
+      {
+        name: 'Refrigerantes',
+        image: 'https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?auto=format&fit=crop&w=800&q=80',
+        desc: 'Refrigerante anticongelante orgánico OAT formulado para proteger radiadores de aluminio y bombas de agua.',
+      },
+      {
+        name: 'Desengrasante',
+        image: 'https://images.unsplash.com/photo-1585421514284-efb74c2b69ba?auto=format&fit=crop&w=800&q=80',
+        desc: 'Desengrasante concentrado de grado industrial para limpieza de motores, transmisiones y chasis.',
+      },
+      {
+        name: 'Aditivos',
+        image: 'https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=800&q=80',
+        desc: 'Aditivos limpiadores de inyectores diésel y tratadores de combustible para restauración de potencia.',
+      },
+      {
+        name: 'Filtro de Aire',
+        image: 'https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=800&q=80',
+        desc: 'Filtro de aire celulósico plisado de alta retención para caminos polvorientos y trabajo pesado.',
+      },
+      {
+        name: 'Filtro de Petróleo',
+        image: 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=800&q=80',
+        desc: 'Filtro de combustible diésel con trampa separadora de agua de alta micrometría para protección de inyectores.',
+      },
+      {
+        name: 'Filtro de Aceite',
+        image: 'https://images.unsplash.com/photo-1486006920555-c77dce18193b?auto=format&fit=crop&w=800&q=80',
+        desc: 'Filtro de aceite blindado giratorio con elemento filtrante sintético y válvula anti-retorno.',
+      },
     ],
   },
   {
@@ -83,10 +147,26 @@ const categories: Category[] = [
       </svg>
     ),
     products: [
-      { name: 'Ópticos y Focos', image: '/img/promo1.jpeg', desc: 'Focos delanteros, neblineros y focos traseros de reemplazo directo' },
-      { name: 'Parachoques', desc: 'Parachoques delanteros y traseros reforzados' },
-      { name: 'Capot', desc: 'Capot y tapabarros con ajuste exacto' },
-      { name: 'Radiadores', desc: 'Radiadores de agua e intercoolers de aluminio' },
+      {
+        name: 'Ópticos y Focos',
+        image: 'https://images.unsplash.com/photo-1508974239320-0a029497e820?auto=format&fit=crop&w=800&q=80',
+        desc: 'Focos delanteros halógenos y LED con lente de policarbonato de alta resistencia contra impacto y rayos UV.',
+      },
+      {
+        name: 'Parachoques',
+        image: 'https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=800&q=80',
+        desc: 'Parachoques delanteros y traseros reforzados, de calce exacto según modelo y año.',
+      },
+      {
+        name: 'Capot',
+        image: 'https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?auto=format&fit=crop&w=800&q=80',
+        desc: 'Capot y tapabarros en chapa de acero galvanizada lista para pintura.',
+      },
+      {
+        name: 'Radiadores',
+        image: 'https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=800&q=80',
+        desc: 'Radiador de aluminio con estanques plásticos de alta densidad e intercoolers de aire para turbo.',
+      },
     ],
   },
   {
@@ -100,15 +180,51 @@ const categories: Category[] = [
       </svg>
     ),
     products: [
-      { name: 'Axiales', desc: 'Axiales de dirección reforzados' },
-      { name: 'Terminales', desc: 'Terminales de dirección de alta precisión' },
-      { name: 'Rótulas', desc: 'Rótulas de suspensión inferior y superior' },
-      { name: 'Bandejas', desc: 'Bandejas de suspensión completas con bujes' },
-      { name: 'Homocinéticas', desc: 'Juntas homocinéticas y fuelles' },
-      { name: 'Ejes palier', desc: 'Ejes de mando y palieres completos' },
-      { name: 'Kit bujes de barra', desc: 'Kit de bujes de barra estabilizadora' },
-      { name: 'Kit de Embrague', desc: 'Kits de embrague con prensas y rodamientos' },
-      { name: 'Cremalleras de Dirección', desc: 'Cremalleras hidráulicas y mecánicas' },
+      {
+        name: 'Axiales',
+        image: 'https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&w=800&q=80',
+        desc: 'Axiales de dirección de acero forjado con rótula interna tratada térmicamente.',
+      },
+      {
+        name: 'Terminales',
+        image: 'https://images.unsplash.com/photo-1517524008697-84bbe3c3fd98?auto=format&fit=crop&w=800&q=80',
+        desc: 'Terminales de dirección exterior con fuelle guardapolvo de neoprene sellado.',
+      },
+      {
+        name: 'Rótulas',
+        image: 'https://images.unsplash.com/photo-1486006920555-c77dce18193b?auto=format&fit=crop&w=800&q=80',
+        desc: 'Rótulas de suspensión superior e inferior de alta carga para terrenos exigentes.',
+      },
+      {
+        name: 'Bandejas',
+        image: 'https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=800&q=80',
+        desc: 'Bandejas de suspensión delantera completas con rótula presensada y bujes vulcanizados.',
+      },
+      {
+        name: 'Homocinéticas',
+        image: 'https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=800&q=80',
+        desc: 'Juntas homocinéticas de lado rueda y lado caja con kit de fuelle, abrazaderas y grasa grafitada.',
+      },
+      {
+        name: 'Ejes palier',
+        image: 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=800&q=80',
+        desc: 'Ejes de transmisión palieres completos para tracción 4x2 y 4x4.',
+      },
+      {
+        name: 'Kit bujes de barra',
+        image: 'https://images.unsplash.com/photo-1585421514284-efb74c2b69ba?auto=format&fit=crop&w=800&q=80',
+        desc: 'Bujes de goma y poliuretano para barra estabilizadora y paquetes de resortes.',
+      },
+      {
+        name: 'Kit de Embrague',
+        image: 'https://images.unsplash.com/photo-1600793575654-910699b5e4d4?auto=format&fit=crop&w=800&q=80',
+        desc: 'Kit de embrague reforzado que incluye disco de embrague orgánico/cerámico, prensa y rodamiento de empuje.',
+      },
+      {
+        name: 'Cremalleras de Dirección',
+        image: 'https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=800&q=80',
+        desc: 'Cremallera de dirección hidráulica y asistida electrónicamente para camionetas de trabajo.',
+      },
     ],
   },
   {
@@ -121,9 +237,21 @@ const categories: Category[] = [
       </svg>
     ),
     products: [
-      { name: 'Ampolletas Halógenas', desc: 'Ampolletas de alta visibilidad H4, H7, H11' },
-      { name: 'Luces LED', desc: 'Kits de iluminación LED Canbus alta potencia' },
-      { name: 'Baterías', desc: 'Baterías de libre mantenimiento reforzadas para diésel' },
+      {
+        name: 'Ampolletas Halógenas',
+        image: 'https://images.unsplash.com/photo-1508974239320-0a029497e820?auto=format&fit=crop&w=800&q=80',
+        desc: 'Ampolletas halógenas de repuesto estándar y alta visibilidad H4, H7, H11 en 12V.',
+      },
+      {
+        name: 'Luces LED',
+        image: 'https://images.unsplash.com/photo-1517524008697-84bbe3c3fd98?auto=format&fit=crop&w=800&q=80',
+        desc: 'Kits de conversión LED Canbus sin error de tablero, con chips CSP de alta intensidad lumínica.',
+      },
+      {
+        name: 'Baterías',
+        image: 'https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=800&q=80',
+        desc: 'Baterías de libre mantenimiento reforzadas de 70Ah a 95Ah con alto amperaje de arranque en frío (CCA).',
+      },
     ],
   },
 ];
@@ -141,7 +269,7 @@ export default function Categories() {
           </h2>
           <div className="divider-line" />
           <p className="section-subtitle">
-            Haz clic en cualquier producto para ver detalles y cotizar directo por WhatsApp
+            Haz clic en cualquier repuesto para ver la foto de referencia y cotizar directo por WhatsApp
           </p>
         </div>
 
@@ -168,7 +296,7 @@ export default function Categories() {
                     key={product.name}
                     className="categories__product-item"
                     onClick={() => setSelectedProduct({ category: cat.title, item: product })}
-                    title="Haz clic para ver foto y cotizar"
+                    title="Haz clic para ver foto de referencia y cotizar"
                   >
                     <span className="categories__product-bullet" />
                     <span className="categories__product-name">{product.name}</span>
@@ -199,7 +327,7 @@ export default function Categories() {
         </div>
       </div>
 
-      {/* Product Detail Modal */}
+      {/* Product Detail Modal with Individual Photo */}
       {selectedProduct && (
         <div className="cat-modal__backdrop" onClick={() => setSelectedProduct(null)}>
           <div className="cat-modal__content" onClick={(e) => e.stopPropagation()}>
@@ -210,23 +338,23 @@ export default function Categories() {
               <span className="cat-modal__tag">{selectedProduct.category}</span>
               <h3 className="cat-modal__title">{selectedProduct.item.name}</h3>
             </div>
-            {selectedProduct.item.image ? (
-              <div className="cat-modal__img-container">
-                <img src={selectedProduct.item.image} alt={selectedProduct.item.name} className="cat-modal__img" />
-              </div>
-            ) : (
-              <div className="cat-modal__img-placeholder">
-                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                  <rect x="2" y="2" width="20" height="20" rx="5"/>
-                  <path d="M16 16l-4-4-3 3-2-2-4 4"/>
-                  <circle cx="8.5" cy="8.5" r="1.5"/>
-                </svg>
-                <span>Repuesto Genuino & Alternativo Garantizado</span>
-              </div>
-            )}
+            
+            <div className="cat-modal__img-container">
+              <img
+                src={selectedProduct.item.image}
+                alt={`Repuesto ${selectedProduct.item.name}`}
+                className="cat-modal__img"
+                onError={(e) => {
+                  // Fallback in case of broken image URL
+                  (e.target as HTMLImageElement).src = '/img/promo2.jpeg';
+                }}
+              />
+            </div>
+
             <p className="cat-modal__desc">
-              {selectedProduct.item.desc || `Disponemos de stock permanente de ${selectedProduct.item.name} para marcas Maxus, Toyota, Nissan, Mitsubishi, Volkswagen, JAC, JMC y más.`}
+              {selectedProduct.item.desc}
             </p>
+
             <div className="cat-modal__footer">
               <a
                 href={`https://wa.me/56961546709?text=Hola%2C%20quisiera%20cotizar%3A%20${encodeURIComponent(selectedProduct.item.name)}%20(Categoría%3A%20${encodeURIComponent(selectedProduct.category)})`}
